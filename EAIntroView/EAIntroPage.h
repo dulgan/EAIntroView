@@ -1,21 +1,18 @@
 //
 //  EAIntroPage.h
 //
-//  Copyright (c) 2013-2015 Evgeny Aleksandrov. License: MIT.
+//  Copyright (c) 2013-2014 Evgeny Aleksandrov. License: MIT.
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 
 typedef void (^VoidBlock)();
 
 @interface EAIntroPage : NSObject
 
-// background image or color used for cross-dissolve
+// background used for cross-dissolve
 @property (nonatomic, strong) UIImage *bgImage;
-@property (nonatomic, strong) UIColor *bgColor;
-
 // show or hide EAIntroView titleView on this page (default YES)
-@property (nonatomic, assign) BOOL showTitleView;
+@property (nonatomic, assign) bool showTitleView;
 
 
 // properties for default EAIntroPage layout
@@ -25,10 +22,10 @@ typedef void (^VoidBlock)();
 // all items from subviews array will be added on page
 
 /**
-* The title view that is presented above the title label.
-* The view can be a normal UIImageView or any other kind uf
-* UIView. This allows to attach animated views as well.
-*/
+ * The title view that is presented above the title label.
+ * The view can be a normal UIImageView or any other kind uf
+ * UIView. This allows to attach animated views as well.
+ */
 @property (nonatomic, strong) UIView * titleIconView;
 
 @property (nonatomic, assign) CGFloat titleIconPositionY;
@@ -36,16 +33,16 @@ typedef void (^VoidBlock)();
 @property (nonatomic, strong) UIFont *titleFont;
 @property (nonatomic, strong) UIColor *titleColor;
 @property (nonatomic, assign) CGFloat titlePositionY;
+@property (nonatomic, assign) NSTextAlignment titleAlignment;
 
 @property (nonatomic, strong) NSString *desc;
 @property (nonatomic, strong) UIFont *descFont;
 @property (nonatomic, strong) UIColor *descColor;
 @property (nonatomic, assign) CGFloat descWidth;
 @property (nonatomic, assign) CGFloat descPositionY;
+@property (nonatomic, assign) NSTextAlignment descAlignment;
 
 @property (nonatomic, strong) NSArray *subviews;
-
-@property (nonatomic, assign) CGFloat alpha;
 
 @property (nonatomic,copy) VoidBlock onPageDidLoad;
 @property (nonatomic,copy) VoidBlock onPageDidAppear;
